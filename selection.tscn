@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdpr5njfisiey"]
+
+[ext_resource type="Script" path="res://selection.gd" id="1_iiy3k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6qyn"]
+bg_color = Color(0, 0.545098, 0.827451, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16t7g"]
+bg_color = Color(0.266667, 0.52549, 0.8, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+
+[node name="Selection" type="Node2D"]
+script = ExtResource("1_iiy3k")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 535.0
+offset_top = 266.0
+offset_right = 666.0
+offset_bottom = 329.0
+tooltip_text = ":)"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6qyn")
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 523.0
+offset_top = 379.0
+offset_right = 674.0
+offset_bottom = 429.0
+tooltip_text = "Dont Do it :("
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_16t7g")
+text = "Quit"
+
+[connection signal="pressed" from="Play" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
